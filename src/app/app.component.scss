@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+
+
+  @include mat.select-overrides((
+    panel-background-color: orange,
+    enabled-trigger-text-color: red,
+  ));
+

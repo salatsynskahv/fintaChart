@@ -1,0 +1,35 @@
+<div class="main-container">
+  <fin-selector class="select"
+                (selectOptionEmitter)=" handleSelectedOptions($event)">
+  </fin-selector>
+
+<!--  <button class="subscribe-button" mat-flat-button>Subscribe</button>-->
+</div>
+<div class="marketing-container">
+  <div class="symbol-container">
+    <p>Symbol:</p>
+    <div class="marketing-container-value">{{ symbol() }}</div>
+  </div>
+  <div class="price-container">
+    <p>Price:</p>
+    <p>{{ price() }}</p>
+  </div>
+  <div class="time-container">
+    <p>Time:</p>
+    <p>{{ time() }}</p>
+  </div>
+</div>
+
+<div class="chart-container">
+  {{chartTitle()}} <button mat-button (click)="onClickShowButton()"> {{ toggleButtonTitle() }}</button>
+  <app-historical-chart *ngIf="showHistoricalPrices()"
+    [selectedOptions]="selectedOptions()"
+    (currentPrice)="setCurrentPrice($event)">
+  </app-historical-chart>
+  <app-realtime-chart *ngIf="!showHistoricalPrices()"
+    [selectedOptions]="selectedOptions()"
+    (currentPrice)="setCurrentPrice($event)">
+  </app-realtime-chart>
+
+</div>
+

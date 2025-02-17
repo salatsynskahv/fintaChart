@@ -1,0 +1,57 @@
+$container-margin: 5%;
+
+.main-container {
+  margin: $container-margin;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "select subscribe";
+
+}
+
+.marketing-container {
+  margin: $container-margin;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "symbol price time";
+  padding: 20px;
+  justify-items: center;
+  border: 1px solid #E8E8E8;
+  border-radius: 5px;
+
+  &-value {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+
+.select {
+  grid-area: select;
+  display: contents;
+ // width: 800px;
+}
+
+.subscribe-button{
+  grid-area: subscribe;
+  justify-self: end;
+}
+
+.price-container {
+  grid-area: price;
+}
+
+.time-container {
+  grid-area: time;
+}
+
+.symbol-container {
+  grid-area: symbol;
+}
+
+
+.chart-container {
+  margin: $container-margin;
+}

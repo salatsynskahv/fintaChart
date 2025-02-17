@@ -1,0 +1,25 @@
+<mat-form-field>
+  <mat-label>Choose one</mat-label>
+  <mat-select
+    class="select"
+    (selectionChange)="onSelectionChange($event.value)">
+    <mat-option class="select-filter-option">
+      <mat-chip-listbox class="filter-buttons"
+                        [hideSingleSelectionIndicator]="true"
+                        [multiple]="false">
+        <mat-chip-option *ngFor="let item of providers()"
+                         [removable]="false"
+                         [selected]="item === selectedProvider()"
+                         (click)="$event.stopPropagation()"
+                         (selectionChange)="filterList($event)">
+          {{ item }}
+        </mat-chip-option>
+      </mat-chip-listbox>
+    </mat-option>
+    <mat-option *ngFor="let item of filteredOptions()"
+                [value]="item"
+                [id]="item.id">
+      {{ item.symbol }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
