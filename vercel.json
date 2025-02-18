@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/identity",
+      "destination": "https://platform.fintacharts.com/identity"
+    }
+  ]
+}
