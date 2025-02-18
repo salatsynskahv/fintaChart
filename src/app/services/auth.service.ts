@@ -1,5 +1,5 @@
 import {inject, Injectable} from "@angular/core";
-import {environment} from "../../environment";
+import {environment} from "../../environments/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -13,7 +13,7 @@ interface Response {
 export class AuthService {
   http = inject(HttpClient);
 
-  private authUrl = '/identity/realms/:realm/protocol/openid-connect/token';
+  private authUrl = environment.AUTH_URI + '/identity/realms/:realm/protocol/openid-connect/token';
 
 
   getToken(): void {
