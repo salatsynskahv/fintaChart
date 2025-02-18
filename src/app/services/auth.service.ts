@@ -26,11 +26,7 @@ export class AuthService {
     body.set('password', environment.PASSWORD);
 
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-      'Access-Control-Allow-Credentials': 'true',
-      'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
+      'Content-Type': 'application/x-www-form-urlencoded',
     });
 
     this.http.post(url, body.toString(), {headers, withCredentials: true}).subscribe((result) => {
