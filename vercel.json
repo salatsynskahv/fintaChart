@@ -3,6 +3,10 @@
     {
       "source": "/identity/:match*",
       "destination": "https://platform.fintacharts.com/identity/:match*"
+    },
+    {
+      "source": "/api/:match*",
+      "destination": "https://platform.fintacharts.com/api/:match*"
     }
   ]
 }
