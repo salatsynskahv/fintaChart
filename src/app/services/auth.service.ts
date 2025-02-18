@@ -13,7 +13,7 @@ interface Response {
 export class AuthService {
   http = inject(HttpClient);
 
-  private authUrl = environment.AUTH_URI + '/identity/realms/:realm/protocol/openid-connect/token';
+  private authUrl = '/identity/realms/:realm/protocol/openid-connect/token';
 
 
   getToken(): void {

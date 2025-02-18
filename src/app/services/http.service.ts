@@ -21,13 +21,13 @@ export class HttpService {
   }
 
   get<T>(endpoint: string): Observable<T> {
-    return this.http.get<T>(`${this.baseUrl}/${endpoint}`, { headers: this.getHeaders() }).pipe(
+    return this.http.get<T>(`/${endpoint}`, { headers: this.getHeaders() }).pipe(
       catchError(this.handleError)
     );
   }
 
   post<T>(endpoint: string, body: any): Observable<T> {
-    return this.http.post<T>(`${this.baseUrl}/${endpoint}`, body, { headers: this.getHeaders() }).pipe(
+    return this.http.post<T>(`/${endpoint}`, body, { headers: this.getHeaders() }).pipe(
       catchError(this.handleError)
     );
   }
